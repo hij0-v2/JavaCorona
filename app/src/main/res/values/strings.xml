@@ -7,4 +7,6 @@
     <string name="login_remember_me">Remember me</string>
     <string name="login_login_btn">Login</string>
     <string name="login_register_btn">Register</string>
+    <string name="login_invalid_username">Wrong Username or/and Password</string>
+
 </resources>
