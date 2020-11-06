@@ -16,8 +16,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login); //Pridek vaizda prie lango
         //Kodas rasomas nuo cia
         Button login=findViewById(R.id.login);//Susiejamas vaizde esantis elementas su kodu
+        Button register=findViewById(R.id.register);
         final EditText username=findViewById(R.id.username);
         final EditText password=findViewById(R.id.password);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(goToRegisterActivity);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,13 +35,14 @@ public class LoginActivity extends AppCompatActivity {
                 /*Toast.makeText(LoginActivity.this, "Prisijungimo vardas: "+
                         username.getText().toString()+"\nSlaptazodis: "+
                         password.getText().toString(), Toast.LENGTH_SHORT).show(); */
-                if (Validation.isValidUsername(username.getText().toString())) {
+                if ((Validation.isValidUsername(username.getText().toString())) && (Validation.isValidPassword(password.getText().toString()))) {
                     //Ketinimas pereiti i paieskos langa                  is kur            i kur
                     Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class);
                     startActivity(goToSearchActivity);
                 }
                 else { //jeigu blogas username
                     username.setError(getResources().getString(R.string.login_invalid_username));
+                    password.setError(getResources().getString(R.string.login_invalid_username));
                     username.requestFocus();
                 }
             }

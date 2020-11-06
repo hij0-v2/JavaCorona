@@ -9,4 +9,13 @@
     <string name="login_register_btn">Register</string>
     <string name="login_invalid_username">Wrong Username or/and Password</string>
 
+    <string name="register_title">Registration Form</string>
+    <string name="register_username">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_email">Email</string>
+    <string name="register_register_btn">Register</string>
+    <string name="register_invalid_email">Email must contain 10-50 characters</string>
+    <string name="register_invalid_username">Username must contain 3-20 characters</string>
+    <string name="register_invalid_password">Password must contain 5-20 characters</string>
+
 </resources>
