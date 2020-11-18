@@ -32,12 +32,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Cia rasomas kodas kuris vykdomas paspaudus mygtuka
-                /*Toast.makeText(LoginActivity.this, "Prisijungimo vardas: "+
-                        username.getText().toString()+"\nSlaptazodis: "+
-                        password.getText().toString(), Toast.LENGTH_SHORT).show(); */
-                if ((Validation.isValidUsername(username.getText().toString())) && (Validation.isValidPassword(password.getText().toString()))) {
+                //Kuriamas User klases objektas
+                //public User(String username, String password)
+                User user = new User(username.getText().toString(),password.getText().toString());
+
+                Toast.makeText(LoginActivity.this, "Prisijungimo vardas: "+
+                        user.getUsername()+"\nSlaptazodis: "+
+                        user.getPassword(), Toast.LENGTH_SHORT).show();
+                if ((Validation.isValidUsername(username.getText().toString())) &&
+                        (Validation.isValidPassword(password.getText().toString()))) {
                     //Ketinimas pereiti i paieskos langa                  is kur            i kur
-                    Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class);
+                    Intent goToSearchActivity = new Intent(LoginActivity.this,
+                            SearchActivity.class);
                     startActivity(goToSearchActivity);
                 }
                 else { //jeigu blogas username
