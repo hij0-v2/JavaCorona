@@ -44,6 +44,7 @@
         android:layout_height="5dp" />
 
     <CheckBox
+        android:id="@+id/rememberMe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_remember_me"/>
